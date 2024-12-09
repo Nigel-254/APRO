@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    Report Missing Person
+{% endblock title %}
+
+{% block content %}
+<section class="report">
+     <div class="form-container">
+        <h1>Report Missing Person</h1>
+        <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+</form>
+
+{#       <script>#}
+{#        document.getElementById('submit-button').addEventListener('click', function () {#}
+{#            const isUserLoggedIn = {{ user.is_authenticated|lower }}; // Django variable passed to JavaScript#}
+{#            if (!isUserLoggedIn) {#}
+{#                const userResponse = confirm(#}
+{#                    "You must log in to submit a report. Click OK to log in or Cancel to remain on this page."#}
+{#                );#}
+{#                if (userResponse) {#}
+{#                    window.location.href = "{% url 'login' %}?next={{ request.path }}"; // Redirect to login page with "next" parameter#}
+{#                }#}
+{#            } else {#}
+{#                // If the user is logged in, submit the form#}
+{#                document.getElementById('report').submit();#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+    </div>
+
+</section>
+
+{% endblock %}

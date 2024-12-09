@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+    <section class="login-page">
+
+    <div class="form-container">
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <!-- Username Field -->
+        <div class="mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <!-- Password Field -->
+        <div class="mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+            {% for error in form.password.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <!-- Redirect to Register -->
+    <div class="text-center mt-3">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </div>
+
+    <!-- Messages -->
+    {% for message in messages %}
+        <div class="alert alert-warning mt-3">{{ message }}</div>
+    {% endfor %}
+</div>
+
+
+</section>
+{% endblock %}

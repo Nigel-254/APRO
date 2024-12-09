@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block title %}
+    About Us
+{% endblock title %}
+
+{% block content %}
+
+    <section class="about">
+    <div class="about-content">
+        <div class="about-top">
+        <h1>Learn About Our Mission To Bring People Home</h1>
+        </div>
+        <div class="about-text">
+            <div class="about-image">
+                <img src="{% static 'images/pray.jpg' %}" alt="">
+            </div>
+            <div class="about-image-text">
+                 <p>
+            At APRO we are dedicated to providing a platform for individuals to come together and help locate missing loved ones.
+        </p>
+        <p>
+           Our mission is to create a strong community of support and resources assist in the search efforts for those who are missing.
+        </p>
+        <p>
+            By sharing information and working together, we believe that we can make a difference in bringing people home safely.
+        </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    </section>
+
+{% endblock %}

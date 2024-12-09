@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block title %}
+    Published Cases
+{% endblock title %}
+
+{% block content %}
+<div class="published">
+    {% for report in reports %}
+    <div class="published-card">
+        <h3>{{ report.name }}</h3>
+        <p>Age: {{ report.age }}</p>
+        <p>Gender: {{ report.get_gender_display }}</p>
+        <p>Date of Disappearance: {{ report.date_of_disappearance }}</p>
+        <p>Location: {{ report.location_of_disappearance }}</p>
+        <img src="{{ report.images.url }}" alt="{{ report.name }}" />
+    <p class="found-btn">If found, <a href="{% url 'found cases' %}" type="button">click here</a>
+    </p>
+    </div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

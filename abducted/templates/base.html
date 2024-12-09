@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>{% block title %}  {% endblock title %}</title>
+   <link rel="stylesheet" href="{% static 'style/main.css' %}">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="icon" type="image/x-icon" href="{% static 'images/logo.jpg' %}">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <nav>
+      <ul>
+         <li class="logo"><a href="{% url 'home' %}">
+             <img src="{% static 'images/logo-removebg.png' %}" alt="">APRO
+             </a>
+         </li>
+         <li class="items"><a href="{% url 'home' %}">Home</a></li>
+         <li class="items"><a href="{% url 'about' %}">About</a></li>
+         <li class="items"><a href="{% url 'report missing person' %}">Report Missing Person</a></li>
+         <li class="items"><a href="{% url 'published cases' %}">Published Cases</a></li>
+         <li class="items"><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li class="items login-btn"><a href="{% url 'login' %}">Login</a></li>
+           <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+   </nav>
+   {% block content %} {% endblock %}
+ <footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+            <img src="{% static 'images/logo-removebg.png' %}" alt="">
+          <span class="logo_name">APRO</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Useful Links</li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'contact' %}">Contact us</a></li>
+          <li><a href="{% url 'about' %}">About us</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Organisation</li>
+          <li><a href="{% url 'report missing person' %}">Report Missing Person</a></li>
+          <li><a href="{% url 'published cases' %}">Published Cases</a></li>
+        </ul>
+
+        <ul class="box">
+          <li class="link_name">What You Can Do</li>
+          <li><a href="{% url 'report missing person' %}">Report Missing Person</a></li>
+            <li><a href="{% url 'report missing person' %}">Upload Missing Person Details</a></li>
+          <li><a href="{% url 'published cases' %}">View Published Cases</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us For Assistance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © 2024 <a href="{% url 'home' %}">APRO</a>All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+ <script src="{% static 'style/main.js' %}">
+   </script>
+</body>

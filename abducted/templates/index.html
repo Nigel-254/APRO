@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+
+    <section class="hero">
+    <h1>Find the Missing, <span>Bring Them Home</span></h1>
+    <p>At APRO we are dedicated to providing a platform for individuals to come together and help locate missing loved ones.
+Our mission is to create a strong community of support and resources assist in the search efforts for those who are missing.</p>
+    <div class="hero-btn">
+        <a href="{% url 'published cases' %}" class="one">View Published Cases</a>
+        <a href="{% url 'report missing person' %}" class="two">Make A Report</a>
+    </div>
+
+    </section>
+
+{#    next#}
+<section class="hero-text">
+<div class="text-image">
+    <img src="{% static 'images/pray.jpg' %}" alt="hope image">
+</div>
+    <div class="image-text">
+         <p>
+        At APRO, we believe tha every missing person deserves to be found.
+        Our platform allows anyone to upload information about a missing individual,
+         creating a community effort to bring them home
+    </p>
+    <p style="margin-top: 30px">
+        With the power of technology and the compassion of our community, we are dedicated to reuniting families
+        and loved ones. Together, we can make a difference in the lives of those who are lost
+    </p>
+    <p style="margin-top: 30px">
+        Join us in our mission to bring hope and closure to those who are missing.
+        Together we can make a difference and bring light to those who are lost in the dark.
+    </p>
+    </div>
+
+</section>
+{% endblock %}
